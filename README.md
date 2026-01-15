@@ -1,13 +1,15 @@
-# Moonshot AI Chatbot
+# Moonshot AI Chatbot with Web Interface
 
-A simple chatbot interface that uses the Moonshot AI API (Kimi model) for conversations.
+A simple chatbot interface that uses the Moonshot AI API (Kimi model) for conversations, featuring both console and web interfaces.
 
 ## Features
 
 - Interactive chat interface
 - Conversation history tracking
+- Web-based interface using Streamlit
 - Ability to reset conversation
 - Error handling
+- Configurable parameters via web UI
 
 ## Requirements
 
@@ -36,6 +38,8 @@ Or you can pass the API key directly to the constructor.
 
 ## Usage
 
+### Console Interface
+
 Run the chatbot in interactive mode:
 
 ```bash
@@ -47,24 +51,24 @@ In the chat interface:
 - Type `quit`, `exit`, or `退出` to exit the program
 - Type `reset` to clear the conversation history
 
-## Example Code Usage
+### Web Interface
 
-```python
-from chatbot import MoonshotChatbot
+Run the Streamlit web application:
 
-# Initialize the chatbot
-bot = MoonshotChatbot()
-
-# Chat with the bot
-response = bot.chat("Hello, how are you?")
-print(response)
-
-# Reset the conversation if needed
-bot.reset_conversation()
+```bash
+streamlit run app.py
 ```
 
-## Notes
+Or use the provided script:
 
-- The chatbot maintains conversation history for context
-- Uses the `kimi-k2-turbo-preview` model by default
-- Temperature is set to 0.6 for balanced creativity and coherence
+```bash
+./run_app.sh
+```
+
+Then open your browser and go to the URL displayed in the terminal (usually http://localhost:8501).
+
+In the web interface:
+- Enter your API key in the sidebar
+- Select your preferred model and temperature settings
+- Type your message in the chat input box
+- Click the "Clear Chat" button to reset the conversation
